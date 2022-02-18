@@ -110,3 +110,59 @@ header {
 		font-size: 30px;
 	}
 }
+.booking-form-box
+{
+  max-width:700px;
+  border:1px solid #ced4da;
+  margin:auto 0;
+
+}
+.radio-btn
+{
+   margin:0 20px;
+}
+.radio-btn .btn
+{
+   margin:20px 10px 20px 0;
+    box-shadow:none;
+}
+.radio-btn .btn::after
+{
+    content:'';
+    height: 15px;
+    width: 15px;
+    top: -2px;
+    left: -1px;
+    background-color:white;
+
+}
+.radio-btn .btn:checked::after
+{
+    content:'';
+    background-color: #000;
+    transition: 0.5s
+}
+.radio-btn span
+{
+   color: #9ad3e4;
+}
+.booking-form span
+{
+   color: #80ffff;
+}
+.booking-form
+{
+   padding: 0 20px 20px;
+}
+.booking-form label
+{
+   margin-bottom: 10px;
+   margin-top:10px;
+   color: #80ffff;
+}
+.form-control
+{
+   border-radius: 1;
+   box-shadow: none;
+}
+

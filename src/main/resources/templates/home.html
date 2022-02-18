@@ -27,6 +27,72 @@
     </span>
         </h1>
         <a th:href="@{/login}">Sign In</a>
+        <br>
+        <br>
+        <form th:action="@{/search_process}"
+              method="post" >
+        <div class="booking-form-box">
+            <div class="radio-btn">
+                <input type="radio" class="btn" name="check"><span>Roundtrip</span>
+                <input type="radio" class="btn" name="check"><span>One-way</span>
+                <input type="radio" class="btn" name="check"><span>Multi-city</span>
+            </div><br>
+
+            <div class="booking-form">
+               <span><label>Flying From</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+                <label>Flying To</label>
+                <input type="text" class="form-control" placeholder="City or Airport"><br><br>
+                <div class="input-grp">
+
+                    <label>Departing</label>
+                    <input type="date" class="form-control select-date">
+
+                </div><br>
+
+                <div class="input-grp">
+
+                    <label>Returning</label>
+                    <input type="date" class="form-control select-date">
+
+                </div><br>
+
+                <div class="input-grp">
+
+                    <label>Adults</label>
+                    <input type="number" class="form-control" value="1">
+
+                </div><br>
+
+                <div class="input-grp">
+
+                    <label>Children</label>
+                    <input type="number" class="form-control" value="0">
+
+                </div><br>
+
+                <div class="input-grp">
+
+                    <label>Travel Class</label>
+                    <select class="custom-select">
+
+                        <option value="1">Economy Class</option>
+                        <option value="2">Buisness Class</option>
+
+
+                    </select>
+                    <input type="number" class="form-control" value="0">
+
+                </div><br>
+
+                <div class="input-grp">
+
+                    <button type="submit" class="btn btn-primary flight">Search</button>
+
+               </div>
+
+               </span>  </div>
+        </div></form>
     </div>
 </header>
 
