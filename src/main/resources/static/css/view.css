@@ -1,0 +1,20 @@
+.view-booking{
+   border:2px solid #000000;
+   margin:20px 500px 0px 600px;
+   width:400px;
+   height:320px;
+   text-align:center;
+}
+.btn-success{
+margin-left:750px;
+}
+.sign-out{
+width:100px;
+margin-left:1300px;
+}
+/*
+a {
+    color: #337ab7;
+    text-decoration: none;
+    margin-left: 1300px;
+}*/
