@@ -1,4 +1,4 @@
-package com.ibs.FlightBookingApp;
+package com.ibs.FlightBookingApp.entity;
 
 import javax.persistence.*;
 
@@ -21,6 +21,10 @@ public class User {
      
     @Column(name = "last_name", nullable = false, length = 20)
     private String lastName;
+
+	public User() {
+
+	}
 
 	public Long getId() {
 		return id;
@@ -61,6 +65,10 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-     
-    // getters and setters are not shown   
+
+	public User( String email) {
+
+		this.email = email;
+
+	}
 }

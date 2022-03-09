@@ -1,0 +1,23 @@
+.booking-element{
+  text-align: center;
+  border:2px solid #000080;
+  margin:0px 500px 0px 600px;
+  width:400px;
+  height:150px;
+}
+.flightdetails-element{
+  text-align: center;
+  border:2px solid #000080;
+  margin:0px 500px 0px 600px;
+  width:400px;
+  height:250px;
+
+}
+.view-booking-button{
+    width: 100px;
+	margin: 0px 50px 0px 1300px;
+}
+img {
+    vertical-align: middle;
+    width: 200px;
+}

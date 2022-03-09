@@ -1,0 +1,22 @@
+.form{
+  margin:50px 100px 0px 250px;
+}
+.search-button{
+  margin:0px 100px 0px 550px;
+}
+.heading-text{
+  margin:80px 0px 0px 0px;
+}
+/*
+header{
+    background:linear-gradient(rgba(0, 0, 0, 0.), rgba(0, 0, 0, 0.8)), url(background.png);
+    height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+*/
+.control-label{
+   color:#ffffff;
+}

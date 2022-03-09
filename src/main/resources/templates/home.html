@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="ISO-8859-1">
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="/css/home.css" />
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <title>ExpediaFlightSearch</title>
+    <style>
+        .table {
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-
 <header>
+
     <div class="wrapper">
         <div class="logo">
-            <img src="/css/logo.png" alt="">
+            <img src="https://flightimagebucket.s3.ap-south-1.amazonaws.com/logo.png" alt="">
         </div>
         <ul class="nav-area">
 
@@ -23,79 +35,12 @@
     <div class="welcome-text">
         <h1>
 
-    The sky is<span> waiting for you
+            The sky is<span> waiting for you
     </span>
         </h1>
         <a th:href="@{/login}">Sign In</a>
-        <br>
-        <br>
-        <form th:action="@{/search_process}"
-              method="post" >
-        <div class="booking-form-box">
-            <div class="radio-btn">
-                <input type="radio" class="btn" name="check"><span>Roundtrip</span>
-                <input type="radio" class="btn" name="check"><span>One-way</span>
-                <input type="radio" class="btn" name="check"><span>Multi-city</span>
-            </div><br>
-
-            <div class="booking-form">
-               <span><label>Flying From</label>
-                <input type="text" class="form-control" placeholder="City or Airport">
-                <label>Flying To</label>
-                <input type="text" class="form-control" placeholder="City or Airport"><br><br>
-                <div class="input-grp">
-
-                    <label>Departing</label>
-                    <input type="date" class="form-control select-date">
-
-                </div><br>
-
-                <div class="input-grp">
-
-                    <label>Returning</label>
-                    <input type="date" class="form-control select-date">
-
-                </div><br>
-
-                <div class="input-grp">
-
-                    <label>Adults</label>
-                    <input type="number" class="form-control" value="1">
-
-                </div><br>
-
-                <div class="input-grp">
-
-                    <label>Children</label>
-                    <input type="number" class="form-control" value="0">
-
-                </div><br>
-
-                <div class="input-grp">
-
-                    <label>Travel Class</label>
-                    <select class="custom-select">
-
-                        <option value="1">Economy Class</option>
-                        <option value="2">Buisness Class</option>
-
-
-                    </select>
-                    <input type="number" class="form-control" value="0">
-
-                </div><br>
-
-                <div class="input-grp">
-
-                    <button type="submit" class="btn btn-primary flight">Search</button>
-
-               </div>
-
-               </span>  </div>
-        </div></form>
     </div>
 </header>
-
 
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="ISO-8859-1">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="/css/logo.png" alt="">
+        </div>
+        <ul class="nav-area">
+            <li><a th:href="@{/register}">Sign Up</a></li>
+        </ul>
+    </div>
+    <div class="welcome-text">
+        <h1>
+    The sky is<span> waiting for you
+    </span>
+        </h1>
+        <a th:href="@{/login}">Sign In</a>
+        <br>
+        <br>
+        <form th:action="@{/flights/search}" th:object="${searchFlightResults}" method="post" class="form-inline">
+            <div class="row">
+                <div class="form-group">
+                    <label for="departure" class="control-label">From</label>
+                    <span class="form-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                    <input type="text" class="form-control" id="departure" placeholder="Leaving From"
+                           name="departure" required>
+                </div>
+                <div class="form-group">
+                    <label for="arrival" class="control-label">To</label>
+                    <input type="text" class="form-control" id="arrival" placeholder="Going To" name="arrival"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="departureDate">Departing</label>
+                    <input type="date" class="form-control" placeholder="Departing Date" id="departureDate"
+                           name="departureDate" required>
+                </div>
+                <br><br>
+                <div>
+                    <div class="form-group col-12">
+                        <button type="submit" class="btn btn-success" style="float: right">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        ///Duffle code
+        <form action="search_process" >
+        <div class="booking-form-box">
+            <div class="radio-btn">
+                <input type="radio" class="btn" name="check"><span>Roundtrip</span>
+                <input type="radio" class="btn" name="check"><span>One-way</span>
+                <input type="radio" class="btn" name="check"><span>Multi-city</span>
+            </div><br>
+            <div class="booking-form">
+               <span><label>Flying From</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+                <label>Flying To</label>
+                <input type="text" class="form-control" placeholder="City or Airport"><br><br>
+                <div class="input-grp">
+                    <label for="departure"></label>
+                    <input type="date" class="form-control select-date">
+                </div><br>
+                <div class="input-grp">
+                    <label for="Returning"></label>
+                    <input type="date" class="form-control select-date">
+                </div><br>
+                <div class="input-grp">
+                    <label for="Adults"></label>
+                    <input type="number" class="form-control" value="1">
+                </div><br>
+                <div class="input-grp">
+                    <label for="Children"></label>
+                    <input type="number" class="form-control" value="0">
+                </div><br>
+                <div class="input-grp">
+                    <label>Travel Class</label>
+                    <select class="custom-select">
+                        <option value="1">Economy Class</option>
+                        <option value="2">Buisness Class</option>
+                    </select>
+                    <input type="number" class="form-control" value="0">
+                </div><br>
+                <div class="input-grp">
+                    <button type="submit" class="btn btn-primary flight">Search</button>
+               </div>
+               </span>  </div>
+        </div></form>
+    </div>
+</header>
+</body>
+</html>
+
+

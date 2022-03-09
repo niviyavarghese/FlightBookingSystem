@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="ISO-8859-1">
+    <title>Booking page</title>
+    <link rel="stylesheet" type="text/css" href="/css/viewbookings.css" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+</head>
+<div class="logo">
+    <img src="https://flightimagebucket.s3.ap-south-1.amazonaws.com/logo.png" alt="">
+</div>
+
+<center><h1 style="color:#008000">My Bookings</h1><br></center>
+<body>
+
+<div class="view-my-bookings">
+<form th:object="${flightdetails}">
+    <thead>
+    <tr  th:each="flights:${flightdetails}">
+
+       <div class="view-flight">
+           <b>PNR Number : </b>PNR<td th:text="${flights.getPnr()}"></td><br><br>
+        <b>Flight Name : </b><td th:text="${flights.getAirlines()}"></td><br><br>
+        <b>Departure Date :</b><td th:text="${flights.getDeparture_date()}"></td><br><br>
+        <b>Arrival Date : </b><td th:text="${flights.getArrival_date()}"></td><br><br>
+        <b>Price : </b><td th:text="${flights.getPrice()}"></td><br><br>
+        <b>Trip Duration : </b><td th:text="${flights.getTripDuration()}"></td><br><br><br><br>
+
+       </div><br><br>
+    </tr>
+    <!--<th:block th:if="${flightdetails ==null}">
+        <div class="col-12">
+            <p style="text-align: center; margin-top: 30px; color: red; font-weight: bold">No Bookings
+                Available!</p>
+        </div>
+    </th:block>-->
+    </thead>
+
+</form>
+</div>
+
+</body>
+</html>

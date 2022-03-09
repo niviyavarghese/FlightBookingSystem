@@ -1,13 +1,17 @@
 package com.ibs.FlightBookingApp;
 
+
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.ibs.FlightBookingApp.entity.User;
+import com.ibs.FlightBookingApp.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.annotation.Rollback;
 
 
@@ -26,11 +30,13 @@ public class UserRepositoryTests {
     @Test
     public void testCreateUser() {
         User user = new User();
-        user.setEmail("ravikumar@gmail.com");
-        user.setPassword("ravi2020");
-        user.setFirstName("Ravi");
-        user.setLastName("Kumar");
-         
+        user.setEmail("kumar@gmail.com");
+        user.setPassword("kumar2020");
+        user.setFirstName("Kumar");
+        user.setLastName("Krishna");
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
         User savedUser = repo.save(user);
          
         User existUser = entityManager.find(User.class, savedUser.getId());
@@ -41,7 +47,7 @@ public class UserRepositoryTests {
     
     @Test
     public void testFindUserByEmail() {
-    	String email="anna@gmail.com";
+    	String email="nivya@gmail.com";
     	User user=repo.findByEmail(email);
     	assertThat(user).isNotNull();
     }

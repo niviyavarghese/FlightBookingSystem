@@ -1,0 +1,15 @@
+.view-my-bookings{
+   text-align: center;
+
+
+}
+.view-flight{
+   border:2px solid #000080;
+   margin:0px 500px 0px 600px;
+   width:400px;
+   height:250px;
+}
+img {
+    vertical-align: middle;
+    width: 200px;
+}
