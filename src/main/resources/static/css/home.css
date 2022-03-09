@@ -11,7 +11,7 @@ body {
 	margin: auto;
 }
 header {
-	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(image.jpg);
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://flightimagebucket.s3.ap-south-1.amazonaws.com/image.jpg);
 	height: 100vh;
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -110,6 +110,7 @@ header {
 		font-size: 30px;
 	}
 }
+/*
 .booking-form-box
 {
   max-width:700px;
@@ -165,4 +166,60 @@ header {
    border-radius: 1;
    box-shadow: none;
 }
+*/
 
+.row{
+    position: absolute;
+    width: 1500px;
+    align:center;
+    left:-430px;
+	margin:5% 20%;
+
+}
+
+.control-label{
+ color: white;
+}
+.table table-striped table-hover{
+ margin: 200px 0px 10px 0px;
+}
+.first-column{
+color:black;
+}
+.radio-btn
+{
+   margin:auto;
+   align:center;
+}
+.radio-btn .btn
+{
+   margin:10px 10px 10px 10px;
+    box-shadow:none;
+}
+.radio-btn .btn::after
+{
+    content:'';
+    height: 10px;
+    width: 15px;
+    top: -2px;
+    left: -1px;
+    background-color:white;
+
+}
+.radio-btn .btn:checked::after
+{
+    content:'';
+    background-color: #000;
+    transition: 0.5s
+}
+.radio-btn span
+{
+   color: #9ad3e4;
+}
+
+.form{
+width:1500px;
+
+padding: 10px 25px;
+
+}

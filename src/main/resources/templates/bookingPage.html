@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Booking page</title>
+    <link rel="stylesheet" type="text/css" href="/css/booking.css" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<header>
+<body>
+
+<center><h2>Book Your Trip</h2></center>
+<form style="margin:auto; width:500px;" th:action="@{/bookingResult}" th:object="${passenger}" method="post" >
+
+  <div class="form-group">
+       <label class="control-label" for="firstName"> First Name </label>
+      <input type="text" id="firstName" class="form-control" th:field="*{firstName}"
+                     required autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="lastName"> Last Name </label> <input
+           type="text" id="lastName" class="form-control" th:field="*{lastName}"
+           required autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="passportNumber"> Passport Number </label> <input
+           type="text" id="passportNumber" class="form-control"  th:field="*{passportNumber}"
+           autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="email"> Email </label> <input
+           type="text" id="email" class="form-control" th:field="*{email}" required
+            autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="address"> Address </label> <input
+         type="text"   id="address" class="form-control" th:field="*{address}"
+         required autofocus="autofocus" />
+    </div>
+
+    <!--<div class="form-group">
+        <label class="control-label" for="travellers"> Travellers </label> <input
+          type="text"  id="travellers" class="form-control" th:field="*{travellers}" required autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="adults"> Adults </label> <input
+          type="text"  id="adults" class="form-control" th:field="*{adults}"  required autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="infants"> Infants </label> <input
+          type="text"  id="infants" class="form-control" th:field="*{infants}"  required autofocus="autofocus" />
+    </div>-->
+    <center><h3>Payment Details</h3></center>
+    <div class="form-group">
+        <label class="control-label" > Card No</label> <input
+            type="text" class="form-control"  required autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" > Card Holder Name</label> <input
+            type="text"   class="form-control"  required autofocus="autofocus" />
+    </div>
+    <div class="form-group">
+        <label class="control-label" >CVV</label> <input
+            type="text"   class="form-control" required autofocus="autofocus" />
+    </div>
+
+    <div class="form-group">
+      <a th:href="@{/bookingResult}" >
+            <button style="background-color:grey" type="submit" class="btn btn-success">Book</button>
+      </a>
+    </div>
+
+</form>
+
+
+</body>
+</header>
+</html>

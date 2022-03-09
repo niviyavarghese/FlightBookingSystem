@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Booking page</title>
+    <link rel="stylesheet" type="text/css" href="/css/booking.css" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="logo">
+    <img src="https://flightimagebucket.s3.ap-south-1.amazonaws.com/logo.png" alt="">
+</div>
+  <div class="view-booking-button">
+<a th:href="@{/viewMyBooking}">View Bookings</a>
+    <a th:href="@{/signout}">Sign Out</a>
+  </div>
+
+ <center><h1 style="color:#008000">BOOKING SUCCESSFUL</h1></center><br><br>
+
+  <form th:object="${passengerid}">
+
+      <div class="booking-element">
+      <thead>
+      <tr th:each="passenger:${passengerid}">
+          <th></th>
+
+          <b>First Name : </b><td th:text="${passenger.getFirstName()}"></td><br><br>
+          <b>Last Name  :</b><td th:text="${passenger.getLastName()}"/><br><br>
+          <b>Passport No :</b> <td th:text="${passenger.getPassportNumber()}"/>
+
+      </tr>
+      </thead>
+
+      </div>
+  </form><br><br><br>
+ <form th:object="${flightdetails}">
+    <!-- <table class="table table-striped table-hover"
+            th:unless="${#lists.isEmpty(flightdetails)}" style="margin-top:30px">
+         <thead>
+         <tr class="table-active">
+             <th scope="col">AirLines</th>
+             <th scope="col">Departure Date</th>
+             <th scope="col">Arrival Date</th>
+             <th scope="col">Price</th>
+             <th scope="col">Trip Duration</th>
+         </tr>
+         </thead>
+         <tr th:each="flights:${flightdetails}">
+             <td th:text="${flights.getAirlines()}">
+             <td th:text="${flights.getDeparture_date()}"></td>
+             <td th:text="${flights.getArrival_date()}"></td>
+             <td th:text="${flights.getPrice()}"></td>
+             <td th:text="${flights.getTripDuration()}"></td>
+         </tr>
+     </table>-->
+     <div class="flightdetails-element">
+         <thead>
+         <tr  th:each="flights:${flightdetails}">
+
+             <b>PNR Number : </b>PNR<td th:text="${flights.getPnr()}"></td><br><br>
+             <b>Flight Name : </b><td th:text="${flights.getAirlines()}"></td><br><br>
+             <b>Departure Date :</b><td th:text="${flights.getDeparture_date()}"></td><br><br>
+             <b>Arrival Date : </b><td th:text="${flights.getArrival_date()}"></td><br><br>
+             <b>Price : </b><td th:text="${flights.getPrice()}"></td><br><br>
+             <b>Trip Duration : </b><td th:text="${flights.getTripDuration()}"></td><br><br>
+
+         </tr>
+         </thead>
+
+     </div>
+ </form>
+<style>
+body {
+  background-image: url("https://filghtbookingbucket.s3.ap-south-1.amazonaws.com/b3.jpg");
+
+  }
+</style>
+</body>
+</html>

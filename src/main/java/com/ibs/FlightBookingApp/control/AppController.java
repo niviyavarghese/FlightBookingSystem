@@ -1,5 +1,10 @@
-package com.ibs.FlightBookingApp;
+package com.ibs.FlightBookingApp.control;
 
+
+import com.ibs.FlightBookingApp.entity.PassengerEntity;
+import com.ibs.FlightBookingApp.entity.User;
+import com.ibs.FlightBookingApp.repository.PassengerRepository;
+import com.ibs.FlightBookingApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,10 +18,14 @@ public class AppController {
 	@Autowired
 	private UserRepository userRepo;
 
+	@Autowired
+	private PassengerRepository passengerRepo;
+
 	@GetMapping("")
 	public String viewHomePage() {
 		return "home";
 	}
+
 
 	@GetMapping("/register")
 	public String showSignUpForm(Model model) {
@@ -35,8 +44,25 @@ public class AppController {
 		return "register_success";
 	}
 
-	@GetMapping("/users")
+	@GetMapping("/flights/search")
 	public String viewUsersList() {
-		return "users";
+		return "flightSearchResults";
+	}
+
+	@PostMapping("/search_process")
+	public String viewSearchPage() {
+		return "search";
+	}
+
+	@GetMapping("/bookingPage")
+	public String viewBookingPage(Model model) {
+		model.addAttribute("passenger", new PassengerEntity());
+		return "bookingPage";
+	}
+
+	@GetMapping("/signout")
+	public String signOut() {
+
+		return "home";
 	}
 }

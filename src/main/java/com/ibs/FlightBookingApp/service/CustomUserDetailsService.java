@@ -1,9 +1,12 @@
-package com.ibs.FlightBookingApp;
+package com.ibs.FlightBookingApp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.ibs.FlightBookingApp.entity.User;
+import com.ibs.FlightBookingApp.repository.UserRepository;
 
 
 
@@ -18,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	if(user==null) {
 		throw new UsernameNotFoundException("User not found");
 	}
- return new CustomUserDetails(user);
+     return new CustomUserDetails(user);
 	}
 
 }
